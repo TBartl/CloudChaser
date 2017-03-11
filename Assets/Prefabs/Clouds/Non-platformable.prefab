@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18caf0f4994f3d341ba7f189e3c7014b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  top: {r: 0.8235294, g: 0.49048445, b: 0.62989855, a: 1}
-  bottom: {r: 0.6544118, g: 0.3175822, b: 0.3359547, a: 1}
+  top: {r: 0.8235294, g: 0, b: 0, a: 0.116}
+  bottom: {r: 0.6544118, g: 0, b: 0, a: 0}
 --- !u!198 &198841321698126814
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -993835073
+  randomSeed: 1702275065
   InitialModule:
     serializedVersion: 3
     enabled: 1
