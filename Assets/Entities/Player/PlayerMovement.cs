@@ -40,10 +40,6 @@ public class PlayerMovement : MonoBehaviour {
         if (inputDirection.magnitude == 0 && grounded && groundVelocity.magnitude < .5f) {
             rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
         }
-        
-        
-
-        CheckOutOfBounds();
 
         CheckGrounded();
     }
@@ -54,13 +50,7 @@ public class PlayerMovement : MonoBehaviour {
             grounded = false;
         }
     }
-
-    void CheckOutOfBounds() {
-        if (transform.position.y < -30) {
-            this.transform.position = Vector3.zero;
-            rigid.velocity = Vector3.zero;
-        }
-    }
+    
 
     void CheckGrounded() {
         RaycastHit hit;

@@ -19,9 +19,7 @@ public class PlayerGrapple : MonoBehaviour {
     public float verticalOffset;
 
     bool grappling = false;
-
-    public GameObject hitPoint;
-
+    
     public float fovSpeed = 20f;
     public Vector2 fovLimits;
 
@@ -30,35 +28,44 @@ public class PlayerGrapple : MonoBehaviour {
 
     Image chargeBar;
 
-	// Use this for initialization
-	void Awake () {
+    public Color colReloading;
+    public Color colCanGrapple;
+    public Color colCantGrapple;
+    Image crossHair;
+
+    // Use this for initialization
+    void Awake () {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
         mainCam = Camera.main;
         chargeBar = GameObject.Find("ChargeBar").GetComponent<Image>();
+        crossHair = GameObject.Find("CrossHair").GetComponent<Image>();
 	}
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f) {
+        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && 
+            Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f &&
+            Vector3.Distance(this.transform.position, grapplePoint) > (detatchDistance + .5f)
+            ) {
             StartCoroutine(Grapple());
         }
 
+        bool canGrappleThisFrame = false;
         if (!grappling) {
             RaycastHit hit = GetGrapplePoint();
-            if (hit.collider == null || Mathf.Abs(Vector3.Dot(hit.normal, Vector3.up)) > .9f) {
-                hitPoint.gameObject.SetActive(false);
-            }
-            else {
+            if (hit.collider != null && Vector3.Dot(hit.normal, Vector3.up) > -.9f && hit.distance > (detatchDistance + 1)) {
                 grapplePoint = hit.point;
-                if (reloaded)
-                    hitPoint.gameObject.SetActive(true);
-                hitPoint.transform.position = hit.point;
+                canGrappleThisFrame = true;
             }
         }
-        else {
-            hitPoint.gameObject.SetActive(false);
-        }
+
+        if (!reloaded)
+            crossHair.color = colReloading;
+        else if (canGrappleThisFrame)
+            crossHair.color = colCanGrapple;
+        else
+            crossHair.color = colCantGrapple;
     }
 
     // Update is called once per frame
