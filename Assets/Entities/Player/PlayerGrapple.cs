@@ -37,7 +37,7 @@ public class PlayerGrapple : MonoBehaviour {
     Image crossHair;
 
     // Use this for initialization
-    void Awake() {
+    void Start() {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
@@ -96,12 +96,14 @@ public class PlayerGrapple : MonoBehaviour {
             speed += grappleAcceleration * Time.deltaTime;
             yield return null;
         }
-        Vector3 finalVelocity = (offsetPoint - transform.position);
-        finalVelocity.y = 0;
-        finalVelocity = finalVelocity.normalized * finalVelocityHorizontal;
-        finalVelocity += Vector3.up * finalVelocityVertical;
-        finalVelocity *= grappleSpeed;
-        movement.rigid.velocity = finalVelocity;
+        if (movement.rigid.velocity.y > 0) {
+            Vector3 finalVelocity = (offsetPoint - transform.position);
+            finalVelocity.y = 0;
+            finalVelocity = finalVelocity.normalized * finalVelocityHorizontal;
+            finalVelocity += Vector3.up * finalVelocityVertical;
+            finalVelocity *= grappleSpeed;
+            movement.rigid.velocity = finalVelocity;
+        }
 
         EndGrapple();
     }

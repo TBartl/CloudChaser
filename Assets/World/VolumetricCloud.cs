@@ -8,7 +8,7 @@ public class VolumetricCloud : MonoBehaviour {
     bool initialized = false;
     ParticleSystem partSystem;
     ParticleSystem.Particle[] particles = { };
-    short burstCount = 30;
+    short burstCount = 10;
 
     void Awake() {
         partSystem = this.GetComponent<ParticleSystem>();
