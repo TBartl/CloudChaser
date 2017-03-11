@@ -944,6 +944,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].value
+      value: 0.9947075
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].inSlope
+      value: 0.027527206
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].outSlope
+      value: 0.027527206
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].inSlope
+      value: 0.029213931
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].outSlope
+      value: 0.029213931
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].time
+      value: 0.7713998
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].time
+      value: 0.23094913
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].value
+      value: 0.0056339055
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
   m_IsPrefabParent: 0

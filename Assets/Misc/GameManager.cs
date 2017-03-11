@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
         for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKey(KeyCode.Space) ? Time.deltaTime * intro.spaceSpeedUpMultiplier : Time.deltaTime)) {
             float p = (t / intro.flowerToGirlTime);
             p = intro.flowerToGirlCurve.Evaluate(p);
-            Camera.main.transform.position = Vector3.Lerp(flower.position + offset, girl.position + offset, p);
+            Camera.main.transform.position = Vector3.Lerp(flower.position + offset + Vector3.up, girl.position + offset, p);
             Camera.main.transform.rotation = Quaternion.Slerp(Quaternion.Euler(intro.flowerRotation), Quaternion.Euler(intro.girlRotation), p);
             yield return null;
         }

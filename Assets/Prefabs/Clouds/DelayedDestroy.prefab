@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   top: {r: 0, g: 0.49048445, b: 0.62989855, a: 0.216}
-  bottom: {r: 0, g: 0.49019608, b: 0.6313726, a: 0}
+  bottom: {r: 0.07152899, g: 0.22010727, b: 0.46323532, a: 0}
+  scale: 1
 --- !u!114 &114805754715260692
 MonoBehaviour:
   m_ObjectHideFlags: 1
