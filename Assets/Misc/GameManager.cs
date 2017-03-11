@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct IntroSequenceSettings {
@@ -14,6 +15,8 @@ public struct IntroSequenceSettings {
 
     public Vector3 flowerRotation;
     public Vector3 girlRotation;
+
+    public List<Image> playerImages;
 }
 
 public class GameManager : MonoBehaviour {
