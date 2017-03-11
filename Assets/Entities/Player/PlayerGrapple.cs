@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerGrapple : MonoBehaviour {
 
     PlayerMovement movement;
-    PlayerView view;
 
     Camera mainCam;
 
@@ -34,7 +33,6 @@ public class PlayerGrapple : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
-        view = transform.parent.GetComponentInChildren<PlayerView>();
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
         mainCam = Camera.main;
@@ -48,7 +46,7 @@ public class PlayerGrapple : MonoBehaviour {
 
         if (!grappling) {
             RaycastHit hit = GetGrapplePoint();
-            if (hit.collider == null) {
+            if (hit.collider == null || Mathf.Abs(Vector3.Dot(hit.normal, Vector3.up)) > .9f) {
                 hitPoint.gameObject.SetActive(false);
             }
             else {

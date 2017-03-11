@@ -37,14 +37,22 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 targetDirection = (inputDirection - groundVelocity / maxHorizontalSpeed).normalized;
         float acceleration = accelerationBySpeed.Evaluate((targetDirection - groundVelocity / maxHorizontalSpeed).magnitude);
         rigid.velocity += targetDirection * acceleration * Time.deltaTime;
-        
-        if (grounded && Input.GetKeyDown(KeyCode.Space)) {
-            rigid.velocity += Vector3.up * jumpPower;
+        if (inputDirection.magnitude == 0 && grounded && groundVelocity.magnitude < .5f) {
+            rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
         }
+        
+        
 
         CheckOutOfBounds();
 
         CheckGrounded();
+    }
+
+    void Update() {
+        if (grounded && Input.GetKeyDown(KeyCode.Space)) {
+            rigid.velocity += Vector3.up * jumpPower;
+            grounded = false;
+        }
     }
 
     void CheckOutOfBounds() {
