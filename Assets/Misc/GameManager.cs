@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator RunGame() {
-        Transform flower;
-        Transform girl;
-        Transform player;
+        Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
+        Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
+        Transform player = GameObject.FindGameObjectWithTag("Girl").transform;
         yield return null;
     }
 

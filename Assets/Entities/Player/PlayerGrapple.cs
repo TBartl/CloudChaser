@@ -81,7 +81,6 @@ public class PlayerGrapple : MonoBehaviour {
 
     IEnumerator Grapple() {
         grappling = true;
-        StartCoroutine(ReloadGrapple());
 
         grappleLine.enabled = true;
         float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
@@ -91,6 +90,7 @@ public class PlayerGrapple : MonoBehaviour {
             yield return null;
         }
 
+        StartCoroutine(ReloadGrapple());
         EndGrapple();
     }
 	
