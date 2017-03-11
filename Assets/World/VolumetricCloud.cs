@@ -23,14 +23,16 @@ public class VolumetricCloud : MonoBehaviour {
         partSystem.emission.SetBursts(bursts);
     }
 
-    void LateUpdate() { 
-        particles = new ParticleSystem.Particle[partSystem.particleCount];
-        int numParticles = partSystem.GetParticles(particles);
-        for (int i = 0; i < numParticles; i++) {
-            particles[i].startColor = Color.Lerp(bottom, top, (particles[i].position.y / partSystem.shape.box.y) + .5f);
-        }
+    void LateUpdate() {
+        if (!initialized) {
+            particles = new ParticleSystem.Particle[partSystem.particleCount];
+            int numParticles = partSystem.GetParticles(particles);
+            for (int i = 0; i < numParticles; i++) {
+                particles[i].startColor = Color.Lerp(bottom, top, (particles[i].position.y / partSystem.shape.box.y) + .5f);
+            }
 
-        initialized = true;
-        partSystem.SetParticles(particles, numParticles);
+            initialized = true;
+            partSystem.SetParticles(particles, numParticles);
+        }
     }
 }
