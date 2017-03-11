@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     PlayerView view;
-    public float maxHorizontalSpeed = 5f;
-    public AnimationCurve accelerationBySpeed;
+    public float groundMaxHorizontalSpeed = 5f;
+    public AnimationCurve groundAccelerationBySpeed;
+    public float airMaxHorizontalSpeed = 20f;
+    public AnimationCurve airAccelerationBySpeed;
+
+    public float jumpPower;
+
 
     [HideInInspector] public Rigidbody rigid;
+
+    bool grounded = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -19,15 +26,25 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
         Vector3 groundVelocity = rigid.velocity;
         groundVelocity.y = 0;
-
+        
         Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         inputDirection = view.transform.TransformVector(inputDirection).normalized; // TODO if we want to use a controller and have it be smooth
         inputDirection.y = 0; // we'll need to rotate this manually with angles and shit
-        inputDirection = inputDirection.normalized; 
+        inputDirection = inputDirection.normalized;
+
+        float maxHorizontalSpeed = grounded ? groundMaxHorizontalSpeed : airMaxHorizontalSpeed;
+        AnimationCurve accelerationBySpeed = grounded ? groundAccelerationBySpeed : airAccelerationBySpeed;
         Vector3 targetDirection = (inputDirection - groundVelocity / maxHorizontalSpeed).normalized;
         float acceleration = accelerationBySpeed.Evaluate((targetDirection - groundVelocity / maxHorizontalSpeed).magnitude);
         rigid.velocity += targetDirection * acceleration * Time.deltaTime;
+        
+        if (grounded && Input.GetKeyDown(KeyCode.Space)) {
+            rigid.velocity += Vector3.up * jumpPower;
+        }
+
         CheckOutOfBounds();
+
+        CheckGrounded();
     }
 
     void CheckOutOfBounds() {
@@ -35,5 +52,11 @@ public class PlayerMovement : MonoBehaviour {
             this.transform.position = Vector3.zero;
             rigid.velocity = Vector3.zero;
         }
+    }
+
+    void CheckGrounded() {
+        RaycastHit hit;
+        Physics.SphereCast(this.transform.position, .25f, Vector3.down, out hit, .8f, 1 << 8);
+        grounded = (hit.collider != null);
     }
 }

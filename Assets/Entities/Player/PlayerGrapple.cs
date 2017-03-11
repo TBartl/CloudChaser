@@ -29,7 +29,7 @@ public class PlayerGrapple : MonoBehaviour {
     public float reloadTime;
     bool reloaded = true;
 
-    Transform chargeBar;
+    Image chargeBar;
 
 	// Use this for initialization
 	void Awake () {
@@ -38,21 +38,23 @@ public class PlayerGrapple : MonoBehaviour {
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
         mainCam = Camera.main;
-        chargeBar = GameObject.Find("ChargeBar").transform;
+        chargeBar = GameObject.Find("ChargeBar").GetComponent<Image>();
 	}
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && GetGrapplePoint().collider != null) {
+        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f) {
             StartCoroutine(Grapple());
         }
 
-        if (!grappling && reloaded) {
+        if (!grappling) {
             RaycastHit hit = GetGrapplePoint();
             if (hit.collider == null) {
                 hitPoint.gameObject.SetActive(false);
             }
             else {
-                hitPoint.gameObject.SetActive(true);
+                grapplePoint = hit.point;
+                if (reloaded)
+                    hitPoint.gameObject.SetActive(true);
                 hitPoint.transform.position = hit.point;
             }
         }
@@ -74,14 +76,8 @@ public class PlayerGrapple : MonoBehaviour {
 
     IEnumerator Grapple() {
         grappling = true;
+        StartCoroutine(ReloadGrapple());
 
-        RaycastHit hit = GetGrapplePoint();
-
-        if (hit.collider == null) {
-            EndGrapple();
-        }
-
-        grapplePoint = hit.point;
         grappleLine.enabled = true;
         float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
         while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, grapplePoint) > detatchDistance) {
@@ -96,16 +92,17 @@ public class PlayerGrapple : MonoBehaviour {
     void EndGrapple() {
         grappling = false;
         grappleLine.enabled = false;
-        StartCoroutine(ReloadGrapple());
     }
 
     IEnumerator ReloadGrapple() {
         reloaded = false;
+        chargeBar.color = Color.gray;
         for (float t = 0; t < reloadTime; t+= Time.deltaTime) {
-            chargeBar.localScale = new Vector3(t / reloadTime, 1, 1);
+            chargeBar.transform.localScale = new Vector3(t / reloadTime, 1, 1);
             yield return null;
         }
         chargeBar.transform.localScale = Vector3.one;
+        chargeBar.color = Color.white;
         reloaded = true;
     }
 	
