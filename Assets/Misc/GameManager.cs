@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public struct IntroSequenceSettings {
     public float spaceSpeedUpMultiplier;
     public float flowerToGirlTime;
+    public AnimationCurve flowerToGirlCurve;
 
     public Vector3 flowerRotation;
     public Vector3 girlRotation;
@@ -34,11 +35,11 @@ public class GameManager : MonoBehaviour {
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 offset = Vector3.back * 3f + Vector3.up * 3f;
+        Vector3 offset = Vector3.back * 1.5f + Vector3.up * 1.5f;
         player.gameObject.SetActive(false);
         for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKey(KeyCode.Space) ? Time.deltaTime * intro.spaceSpeedUpMultiplier : Time.deltaTime)) {
             float p = (t / intro.flowerToGirlTime);
-            p = Mathf.Sin(p * Mathf.PI / 2f) *.5f + .5f;
+            p = intro.flowerToGirlCurve.Evaluate(p);
             Camera.main.transform.position = Vector3.Lerp(flower.position + offset, girl.position + offset, p);
             Camera.main.transform.rotation = Quaternion.Slerp(Quaternion.Euler(intro.flowerRotation), Quaternion.Euler(intro.girlRotation), p);
             yield return null;

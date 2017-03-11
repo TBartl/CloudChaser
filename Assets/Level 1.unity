@@ -676,6 +676,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4062173997849834, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -707,6 +712,146 @@ Prefab:
     - target: {fileID: 4062173997849834, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.girlRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerRotation.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.girlRotation.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].time
+      value: 0.32223544
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].value
+      value: 0.13644785
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].inSlope
+      value: 0.7741615
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].outSlope
+      value: 0.7741615
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].time
+      value: 0.70500976
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].value
+      value: 0.9598238
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].inSlope
+      value: 0.23711021
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].outSlope
+      value: 0.23711021
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[1].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[2].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[3].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[3].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[4].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[4].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[4].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[0].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[3].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: intro.flowerToGirlCurve.m_Curve.Array.data[4].tangentMode
+      value: 136
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
