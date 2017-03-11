@@ -8,7 +8,8 @@ public class VolumetricCloud : MonoBehaviour {
     bool initialized = false;
     ParticleSystem partSystem;
     ParticleSystem.Particle[] particles = { };
-    short burstCount = 10;
+    short burstCount = 3;
+    public float scale = 1f;
 
     void Awake() {
         partSystem = this.GetComponent<ParticleSystem>();
@@ -16,7 +17,7 @@ public class VolumetricCloud : MonoBehaviour {
         ParticleSystem.ShapeModule shapeModule = partSystem.shape;
         shapeModule.box = transform.parent.localScale;
         ParticleSystem.Burst burst = new ParticleSystem.Burst();
-        short thisBurstCount = (short)(burstCount * (transform.parent.localScale.x * transform.parent.localScale.y * transform.parent.localScale.z));
+        short thisBurstCount = (short)(burstCount * (transform.parent.localScale.x / scale * transform.parent.localScale.y / scale * transform.parent.localScale.z / scale));
         burst.minCount = thisBurstCount;
         burst.maxCount = thisBurstCount;
         ParticleSystem.Burst[] bursts = { burst };

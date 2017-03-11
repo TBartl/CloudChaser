@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     public float remainingTime = 30f;
 
-    void Awake() {
+    void Start() {
         S = this;
         StartCoroutine(RunGame());
     }
