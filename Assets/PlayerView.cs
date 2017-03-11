@@ -11,6 +11,8 @@ public class PlayerView : MonoBehaviour {
     void Start() {
         mainCamera = Camera.main.transform;
         UpdateCameraPosition();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 	// Update is called once per frame
