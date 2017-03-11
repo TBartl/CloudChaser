@@ -13,6 +13,7 @@ public class Collect : MonoBehaviour {
             StartCoroutine(BounceToHead());
             collected = true;
         }
+        
     }
 
     IEnumerator BounceToHead() {
