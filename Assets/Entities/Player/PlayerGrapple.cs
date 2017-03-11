@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerGrapple : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class PlayerGrapple : MonoBehaviour {
     Vector3 grapplePoint;
     public float maxDist = 20f;
     public float grappleSpeed = 10f;
+    public float grappleAcceleration = 5f;
     public float detatchDistance = 1.5f;
     public float verticalOffset;
 
@@ -24,6 +26,11 @@ public class PlayerGrapple : MonoBehaviour {
     public float fovSpeed = 20f;
     public Vector2 fovLimits;
 
+    public float reloadTime;
+    bool reloaded = true;
+
+    Transform chargeBar;
+
 	// Use this for initialization
 	void Awake () {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
@@ -31,14 +38,15 @@ public class PlayerGrapple : MonoBehaviour {
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
         mainCam = Camera.main;
+        chargeBar = GameObject.Find("ChargeBar").transform;
 	}
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && !grappling) {
+        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && GetGrapplePoint().collider != null) {
             StartCoroutine(Grapple());
         }
 
-        if (!grappling) {
+        if (!grappling && reloaded) {
             RaycastHit hit = GetGrapplePoint();
             if (hit.collider == null) {
                 hitPoint.gameObject.SetActive(false);
@@ -70,22 +78,36 @@ public class PlayerGrapple : MonoBehaviour {
         RaycastHit hit = GetGrapplePoint();
 
         if (hit.collider == null) {
-            grappling = false;
-            yield break;
+            EndGrapple();
         }
 
         grapplePoint = hit.point;
         grappleLine.enabled = true;
-
+        float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
         while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, grapplePoint) > detatchDistance) {
-            movement.rigid.velocity = (grapplePoint + Vector3.up * verticalOffset - transform.position).normalized * grappleSpeed;
+            movement.rigid.velocity = (grapplePoint + Vector3.up * verticalOffset - transform.position).normalized * speed;
+            speed += grappleAcceleration * Time.deltaTime;
             yield return null;
         }
 
-        grappleLine.enabled = false;
-        grappling = false;
+        EndGrapple();
     }
 	
+    void EndGrapple() {
+        grappling = false;
+        grappleLine.enabled = false;
+        StartCoroutine(ReloadGrapple());
+    }
+
+    IEnumerator ReloadGrapple() {
+        reloaded = false;
+        for (float t = 0; t < reloadTime; t+= Time.deltaTime) {
+            chargeBar.localScale = new Vector3(t / reloadTime, 1, 1);
+            yield return null;
+        }
+        chargeBar.transform.localScale = Vector3.one;
+        reloaded = true;
+    }
 	
 
     RaycastHit GetGrapplePoint() {
