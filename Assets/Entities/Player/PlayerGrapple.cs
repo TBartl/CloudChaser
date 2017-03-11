@@ -18,6 +18,9 @@ public class PlayerGrapple : MonoBehaviour {
     public float detatchDistance = 1.5f;
     public float verticalOffset;
 
+    public float finalVelocityHorizontal;
+    public float finalVelocityVertical;
+
     bool grappling = false;
 
     public float fovSpeed = 20f;
@@ -93,6 +96,12 @@ public class PlayerGrapple : MonoBehaviour {
             speed += grappleAcceleration * Time.deltaTime;
             yield return null;
         }
+        Vector3 finalVelocity = (offsetPoint - transform.position);
+        finalVelocity.y = 0;
+        finalVelocity = finalVelocity.normalized * finalVelocityHorizontal;
+        finalVelocity += Vector3.up * finalVelocityVertical;
+        finalVelocity *= grappleSpeed;
+        movement.rigid.velocity = finalVelocity;
 
         EndGrapple();
     }

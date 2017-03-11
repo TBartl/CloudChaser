@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour {
         groundVelocity.y = 0;
         
         Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        inputDirection = view.transform.TransformVector(inputDirection).normalized; // TODO if we want to use a controller and have it be smooth
-        inputDirection.y = 0; // we'll need to rotate this manually with angles and shit
+        inputDirection = view.transform.TransformVector(inputDirection).normalized;
+        inputDirection.y = 0;
         inputDirection = inputDirection.normalized;
 
         float maxHorizontalSpeed = grounded ? groundMaxHorizontalSpeed : airMaxHorizontalSpeed;
