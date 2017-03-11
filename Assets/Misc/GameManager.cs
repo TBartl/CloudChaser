@@ -31,14 +31,16 @@ public class GameManager : MonoBehaviour {
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 offset = Vector3.back * 3f + Vector3.up * 3f;
         player.gameObject.SetActive(false);
         for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKey(KeyCode.Space) ? Time.deltaTime * intro.spaceSpeedUpMultiplier : Time.deltaTime)) {
-            float p = Mathf.Sin((t / intro.flowerToGirlTime) * Mathf.PI) *.5f + .5f;
-            Camera.main.transform.position = Vector3.Lerp(flower.position, girl.position, t);
+            float p = (t / intro.flowerToGirlTime);
+            p = Mathf.Sin(p * Mathf.PI / 2f) *.5f + .5f;
+            Camera.main.transform.position = Vector3.Lerp(flower.position + offset, girl.position + offset, p);
             yield return null;
         }
 
-        player.gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
     }
 
 }
