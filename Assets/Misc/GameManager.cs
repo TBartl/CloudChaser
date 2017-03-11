@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector3 offset = Vector3.back * 1.5f + Vector3.up * 1.5f;
         player.gameObject.SetActive(false);
+        foreach (Image i in intro.playerImages)
+            i.enabled = false;
         for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKey(KeyCode.Space) ? Time.deltaTime * intro.spaceSpeedUpMultiplier : Time.deltaTime)) {
             float p = (t / intro.flowerToGirlTime);
             p = intro.flowerToGirlCurve.Evaluate(p);
@@ -58,7 +60,8 @@ public class GameManager : MonoBehaviour {
             Camera.main.transform.rotation = Quaternion.Slerp(Quaternion.Euler(intro.girlRotation), Quaternion.Euler(Vector3.zero), p);
             yield return null;
         }
-
+        foreach (Image i in intro.playerImages)
+            i.enabled = true;
         player.gameObject.SetActive(true);
     }
 

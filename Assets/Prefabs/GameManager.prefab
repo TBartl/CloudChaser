@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 222388906656003912}
   - component: {fileID: 114031391891583252}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Charge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
+  m_EffectDistance: {x: 8, y: -8}
   m_UseGraphicAlpha: 1
 --- !u!114 &114460997587481422
 MonoBehaviour:
@@ -398,6 +398,61 @@ MonoBehaviour:
   intro:
     spaceSpeedUpMultiplier: 5
     flowerToGirlTime: 5
+    flowerToGirlCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 0.24132258
+        value: 0.031796694
+        inSlope: 0.18040428
+        outSlope: 0.18040428
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 0.70500976
+        value: 0.9598238
+        inSlope: 0.21182236
+        outSlope: 0.21182236
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    girlToPlayerTimeTime: 2
+    girlToPlayerTimeCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    flowerRotation: {x: 45, y: 0, z: 0}
+    girlRotation: {x: 30, y: 0, z: 0}
+    playerImages:
+    - {fileID: 114006797516073402}
+    - {fileID: 114031391891583252}
+    - {fileID: 114460997587481422}
   remainingTime: 30
 --- !u!222 &222388906656003912
 CanvasRenderer:
@@ -532,8 +587,8 @@ RectTransform:
   m_Father: {fileID: 224633855704526756}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0.48200002, y: 0.13100001, z: 13.015}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -795.6, y: -356.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 120, y: 100}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
