@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33351181858200748}
   - component: {fileID: 23382807347650802}
   - component: {fileID: 135903953797301434}
+  - component: {fileID: 114055738134993330}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Flower
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314257963655342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.39, y: 9.5, z: 7.59}
+  m_LocalPosition: {x: -0.092796326, y: -0.31, z: -2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,6 +81,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314257963655342}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114055738134993330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314257963655342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda8a9a6857283a47af74836f2ff7885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135903953797301434
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -87,7 +99,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314257963655342}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
