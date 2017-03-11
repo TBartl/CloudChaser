@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013175835014418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -12.5}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: -27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861595669742146}
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ebae3eda6d4b4690c3e76ae3f806d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMaxHorizontalSpeed: 3
+  groundMaxHorizontalSpeed: 6
   groundAccelerationBySpeed:
     serializedVersion: 2
     m_Curve:
@@ -343,29 +343,35 @@ MonoBehaviour:
       tangentMode: 0
     - serializedVersion: 2
       time: 1
-      value: 49.87124
-      inSlope: 55.412487
-      outSlope: 55.412487
+      value: 29
+      inSlope: 32.22222
+      outSlope: 32.22222
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  airMaxHorizontalSpeed: 14
+  airMaxHorizontalSpeed: 15
   airAccelerationBySpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 8.056687
-      outSlope: 8.056687
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+    - serializedVersion: 2
+      time: 0.8055352
+      value: 0.83700275
+      inSlope: 3.348011
+      outSlope: 3.348011
+      tangentMode: 136
     - serializedVersion: 2
       time: 1
-      value: 9.5
-      inSlope: 7.3291545
-      outSlope: 7.3291545
-      tangentMode: 0
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -388,6 +394,8 @@ MonoBehaviour:
   grappleAcceleration: 9
   detatchDistance: 2.6
   verticalOffset: 2.5
+  finalVelocityHorizontal: 1
+  finalVelocityVertical: 2
   fovSpeed: 40
   fovLimits: {x: 70, y: 95}
   reloadTime: 2.5
