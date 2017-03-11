@@ -44,9 +44,10 @@ public class PlayerGrapple : MonoBehaviour {
 	}
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && !grappling && reloaded && 
+        if (Input.GetMouseButtonDown(0) && !grappling && reloaded &&
             Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f &&
-            Vector3.Distance(this.transform.position, grapplePoint) > (detatchDistance + .5f)
+            Vector3.Distance(this.transform.position, grapplePoint) > (detatchDistance + .5f) &&
+            Vector3.Distance(this.transform.position, grapplePoint) <= (maxDist + 2f)
             ) {
             StartCoroutine(Grapple());
         }
@@ -82,6 +83,8 @@ public class PlayerGrapple : MonoBehaviour {
     IEnumerator Grapple() {
         grappling = true;
 
+        StartCoroutine(ReloadGrapple());
+
         grappleLine.enabled = true;
         float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
         while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, grapplePoint) > detatchDistance) {
@@ -90,7 +93,6 @@ public class PlayerGrapple : MonoBehaviour {
             yield return null;
         }
 
-        StartCoroutine(ReloadGrapple());
         EndGrapple();
     }
 	
