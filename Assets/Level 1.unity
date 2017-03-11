@@ -261,7 +261,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 32
-    m_FontStyle: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -271,9 +271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'What the fuck
-
-    did you just'
+  m_Text: 
 --- !u!222 &491686526
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -743,7 +741,7 @@ GameObject:
   - component: {fileID: 1211514280}
   - component: {fileID: 1211514279}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,7 +810,7 @@ GameObject:
   - component: {fileID: 1222278950}
   - component: {fileID: 1222278949}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
