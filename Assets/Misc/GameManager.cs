@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour {
     IEnumerator RunGame() {
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
-        Transform player = GameObject.FindGameObjectWithTag("Girl").transform;
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         player.gameObject.SetActive(false);
-        for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKeyDown(KeyCode.Space) ? Time.deltaTime : Time.deltaTime * intro.spaceSpeedUpMultiplier)) {
+        for (float t = 0; t < intro.flowerToGirlTime; t += (Input.GetKey(KeyCode.Space) ? Time.deltaTime * intro.spaceSpeedUpMultiplier : Time.deltaTime)) {
             float p = Mathf.Sin((t / intro.flowerToGirlTime) * Mathf.PI) *.5f + .5f;
             Camera.main.transform.position = Vector3.Lerp(flower.position, girl.position, t);
             yield return null;

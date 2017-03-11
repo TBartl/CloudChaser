@@ -98,11 +98,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4194940238913824, guid: 881f7c7fa0cebcf4ab42b483bccbdc35, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -134,85 +129,6 @@ Prefab:
     - target: {fileID: 4194940238913824, guid: 881f7c7fa0cebcf4ab42b483bccbdc35, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[0].inSlope
-      value: 1.7448982
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[0].outSlope
-      value: 1.7448982
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[1].time
-      value: 0.79213506
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[1].value
-      value: 1.382195
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[2].value
-      value: 21.59927
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[2].inSlope
-      value: 97.26063
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[2].outSlope
-      value: 97.26063
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[2].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[1].inSlope
-      value: 2.2302425
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[1].outSlope
-      value: 52.681404
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: airAccelerationBySpeed.m_Curve.Array.data[1].tangentMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114101112100609690, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114475712954284998, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114270927299853114, guid: 881f7c7fa0cebcf4ab42b483bccbdc35,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1013175835014418, guid: 881f7c7fa0cebcf4ab42b483bccbdc35, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 881f7c7fa0cebcf4ab42b483bccbdc35, type: 2}
@@ -792,16 +708,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
-        type: 2}
-      propertyPath: intro.spaceSpeedUpMultiplier
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
-        type: 2}
-      propertyPath: intro.flowerToGirlTime
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
   m_IsPrefabParent: 0
@@ -842,18 +748,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4099254593265318, guid: e24ba154470282c409a9d2f67f2aca04, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099254593265318, guid: e24ba154470282c409a9d2f67f2aca04, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -24.558
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099254593265318, guid: e24ba154470282c409a9d2f67f2aca04, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099254593265318, guid: e24ba154470282c409a9d2f67f2aca04, type: 2}
-      propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
