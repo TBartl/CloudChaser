@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013175835014418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12.5}
+  m_LocalPosition: {x: 0, y: 0.5, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861595669742146}
@@ -357,20 +357,14 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 1.7448982
-      outSlope: 1.7448982
+      inSlope: 13.301042
+      outSlope: 13.301042
       tangentMode: 34
     - serializedVersion: 2
-      time: 0.79213506
-      value: 1.382195
-      inSlope: 2.2302425
-      outSlope: 52.681404
-      tangentMode: 1
-    - serializedVersion: 2
       time: 1
-      value: 21.59927
-      inSlope: 97.26063
-      outSlope: 97.26063
+      value: 13.301042
+      inSlope: 13.301042
+      outSlope: 13.301042
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -392,8 +386,8 @@ MonoBehaviour:
   maxDist: 20
   grappleSpeed: 6
   grappleAcceleration: 9
-  detatchDistance: 2
-  verticalOffset: 2
+  detatchDistance: 2.6
+  verticalOffset: 2.5
   fovSpeed: 40
   fovLimits: {x: 70, y: 95}
   reloadTime: 2.5

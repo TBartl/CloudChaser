@@ -19,7 +19,7 @@ public class PlayerGrapple : MonoBehaviour {
     public float verticalOffset;
 
     bool grappling = false;
-    
+
     public float fovSpeed = 20f;
     public Vector2 fovLimits;
 
@@ -34,14 +34,14 @@ public class PlayerGrapple : MonoBehaviour {
     Image crossHair;
 
     // Use this for initialization
-    void Awake () {
+    void Awake() {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
         mainCam = Camera.main;
         chargeBar = GameObject.Find("ChargeBar").GetComponent<Image>();
         crossHair = GameObject.Find("CrossHair").GetComponent<Image>();
-	}
+    }
 
     void Update() {
         if (Input.GetMouseButtonDown(0) && !grappling && reloaded &&
@@ -87,15 +87,16 @@ public class PlayerGrapple : MonoBehaviour {
 
         grappleLine.enabled = true;
         float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
-        while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, grapplePoint) > detatchDistance) {
-            movement.rigid.velocity = (grapplePoint + Vector3.up * verticalOffset - transform.position).normalized * speed;
+        Vector3 offsetPoint = grapplePoint + Vector3.up * verticalOffset;
+        while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, offsetPoint) > detatchDistance) {
+            movement.rigid.velocity = (offsetPoint - transform.position).normalized * speed;
             speed += grappleAcceleration * Time.deltaTime;
             yield return null;
         }
 
         EndGrapple();
     }
-	
+
     void EndGrapple() {
         grappling = false;
         grappleLine.enabled = false;
@@ -104,7 +105,7 @@ public class PlayerGrapple : MonoBehaviour {
     IEnumerator ReloadGrapple() {
         reloaded = false;
         chargeBar.color = Color.gray;
-        for (float t = 0; t < reloadTime; t+= Time.deltaTime) {
+        for (float t = 0; t < reloadTime; t += Time.deltaTime) {
             chargeBar.transform.localScale = new Vector3(t / reloadTime, 1, 1);
             yield return null;
         }
@@ -112,12 +113,12 @@ public class PlayerGrapple : MonoBehaviour {
         chargeBar.color = Color.white;
         reloaded = true;
     }
-	
+
 
     RaycastHit GetGrapplePoint() {
         RaycastHit hit;
         Physics.Raycast(this.transform.position, transform.forward, out hit, maxDist, 1 << 8);
         return hit;
     }
-    
+
 }
