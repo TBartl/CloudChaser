@@ -7,6 +7,8 @@ public class PlayerGrapple : MonoBehaviour {
     PlayerMovement movement;
     PlayerView view;
 
+    Camera mainCam;
+
     LineRenderer grappleLine;
     public Transform muzzle;
     Vector3 grapplePoint;
@@ -17,12 +19,18 @@ public class PlayerGrapple : MonoBehaviour {
 
     bool grappling = false;
 
+    public GameObject hitPoint;
+
+    public float fovSpeed = 20f;
+    public Vector2 fovLimits;
+
 	// Use this for initialization
 	void Awake () {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
         view = transform.parent.GetComponentInChildren<PlayerView>();
         grappleLine = transform.GetComponentInChildren<LineRenderer>();
         grappleLine.enabled = false;
+        mainCam = Camera.main;
 	}
 
     void Update() {
@@ -31,15 +39,36 @@ public class PlayerGrapple : MonoBehaviour {
         }
 
         if (!grappling) {
-
+            RaycastHit hit = GetGrapplePoint();
+            if (hit.collider == null) {
+                hitPoint.gameObject.SetActive(false);
+            }
+            else {
+                hitPoint.gameObject.SetActive(true);
+                hitPoint.transform.position = hit.point;
+            }
         }
+        else {
+            hitPoint.gameObject.SetActive(false);
+        }
+    }
+
+    // Update is called once per frame
+    void LateUpdate() {
+        grappleLine.SetPosition(0, muzzle.position);
+        grappleLine.SetPosition(1, grapplePoint);
+
+        if (grappling)
+            mainCam.fieldOfView = Mathf.Min(mainCam.fieldOfView + fovSpeed * Time.deltaTime, fovLimits.y);
+        else
+            mainCam.fieldOfView = Mathf.Max(mainCam.fieldOfView - fovSpeed * Time.deltaTime, fovLimits.x);
     }
 
     IEnumerator Grapple() {
         grappling = true;
-        RaycastHit hit;
-        Physics.Raycast(this.transform.position, transform.forward, out hit, maxDist, 1 << 8);
-        Debug.Log(hit.collider);
+
+        RaycastHit hit = GetGrapplePoint();
+
         if (hit.collider == null) {
             grappling = false;
             yield break;
@@ -49,7 +78,7 @@ public class PlayerGrapple : MonoBehaviour {
         grappleLine.enabled = true;
 
         while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, grapplePoint) > detatchDistance) {
-            movement.rigid.velocity = (grapplePoint + Vector3.up - transform.position).normalized * grappleSpeed;
+            movement.rigid.velocity = (grapplePoint + Vector3.up * verticalOffset - transform.position).normalized * grappleSpeed;
             yield return null;
         }
 
@@ -57,9 +86,12 @@ public class PlayerGrapple : MonoBehaviour {
         grappling = false;
     }
 	
-	// Update is called once per frame
-	void LateUpdate () {
-        grappleLine.SetPosition(0, muzzle.position);
-        grappleLine.SetPosition(1, grapplePoint);
+	
+
+    RaycastHit GetGrapplePoint() {
+        RaycastHit hit;
+        Physics.Raycast(this.transform.position, transform.forward, out hit, maxDist, 1 << 8);
+        return hit;
     }
+    
 }
