@@ -522,7 +522,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673173272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 622312544}
@@ -541,25 +541,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ebae3eda6d4b4690c3e76ae3f806d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHorizontalSpeed: 5
   accelerationBySpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 24.904652
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 1
+      inSlope: 29
+      outSlope: 29
+      tangentMode: 34
     - serializedVersion: 2
-      time: 3.5
-      value: 5.282522
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 1
+      value: 30
+      inSlope: 29
+      outSlope: 29
+      tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  decceleration: 5
   rigid: {fileID: 0}
 --- !u!114 &673173276
 MonoBehaviour:
@@ -1445,7 +1445,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620373847}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ce7aae85f96ea8e4fa6e444668070715, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1465,7 +1465,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620373847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.055, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 1442253762}
