@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18caf0f4994f3d341ba7f189e3c7014b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  top: {r: 0.8740809, g: 0.87931037, b: 0.5237069, a: 0.522}
-  bottom: {r: 0.654902, g: 0.31764707, b: 0.3372549, a: 0.522}
+  top: {r: 0.20604457, g: 0.643289, b: 0.75735295, a: 0.522}
+  bottom: {r: 0.2744251, g: 0.22496757, b: 0.53676474, a: 0.522}
   scale: 1
 --- !u!114 &114252946855607224
 MonoBehaviour:
