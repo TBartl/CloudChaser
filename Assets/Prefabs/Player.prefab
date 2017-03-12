@@ -329,7 +329,7 @@ MonoBehaviour:
   finalVelocityVertical: 2
   fovSpeed: 40
   fovLimits: {x: 70, y: 95}
-  reloadTime: 2.5
+  reloadTime: 2
   colReloading: {r: 0.39705884, g: 0.39705884, b: 0.39705884, a: 0.347}
   colCanGrapple: {r: 0.32709396, g: 0.6691177, b: 0.31487888, a: 0.797}
   colCantGrapple: {r: 0.778, g: 0.22310293, b: 0.22310293, a: 0.447}

@@ -50,7 +50,8 @@ public class PlayerGrapple : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !grappling && reloaded &&
             Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f &&
             Vector3.Distance(this.transform.position, grapplePoint) > (detatchDistance + .5f) &&
-            Vector3.Distance(this.transform.position, grapplePoint) <= (maxDist + 2f)
+            Vector3.Distance(this.transform.position, grapplePoint) <= (maxDist + 2f) &&
+            grapplePoint != Vector3.zero
             ) {
             StartCoroutine(Grapple());
         }
