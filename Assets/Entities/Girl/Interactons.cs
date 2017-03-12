@@ -13,8 +13,11 @@ public class Interactons : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            if (!recievedFlower)
+            if (!recievedFlower) {
+                if (words.sprite != whereFlower)
+                    AudioManager.S.wheresTheFlower.Play();
                 words.sprite = whereFlower;
+            }
         }
 
         if (other.tag == "Flower") {

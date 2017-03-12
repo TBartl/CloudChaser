@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     [HideInInspector] public Rigidbody rigid;
 
     bool grounded = true;
+    bool wasGrounded = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -41,13 +42,17 @@ public class PlayerMovement : MonoBehaviour {
             rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
         }
 
+        wasGrounded = grounded;
         CheckGrounded();
+        if (!wasGrounded && grounded)
+            AudioManager.S.land.Play();
     }
 
     void Update() {
         if (grounded && Input.GetKeyDown(KeyCode.Space)) {
             rigid.velocity += Vector3.up * jumpPower;
             grounded = false;
+            AudioManager.S.jump.Play();
         }
     }
     

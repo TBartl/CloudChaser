@@ -88,6 +88,7 @@ public class PlayerGrapple : MonoBehaviour {
         grappling = true;
 
         StartCoroutine(ReloadGrapple());
+        AudioManager.S.grappleConnect.Play();
 
         grappleLine.enabled = true;
         float speed = Mathf.Max(movement.rigid.velocity.magnitude, grappleSpeed);
@@ -112,6 +113,7 @@ public class PlayerGrapple : MonoBehaviour {
     void EndGrapple() {
         grappling = false;
         grappleLine.enabled = false;
+        AudioManager.S.grappleDisconnect.Play();
     }
 
     IEnumerator ReloadGrapple() {
@@ -123,6 +125,7 @@ public class PlayerGrapple : MonoBehaviour {
         }
         chargeBar.transform.localScale = Vector3.one;
         chargeBar.color = Color.white;
+        AudioManager.S.grappleReload.Play();
         reloaded = true;
     }
 

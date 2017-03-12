@@ -28,6 +28,7 @@ public class Crumble : MonoBehaviour {
     IEnumerator DestroyAndRespawn() {
         beingDestroyed = true;
         yield return new WaitForSeconds(delay);
+        AudioManager.S.cloudCrumble.Play();
         particleSyst.SetActive(false);
         boxCollider.enabled = false;
         yield return new WaitForSeconds(respawn);

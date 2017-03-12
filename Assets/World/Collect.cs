@@ -13,12 +13,14 @@ public class Collect : MonoBehaviour {
             this.transform.SetParent(other.transform);
             StartCoroutine(BounceToHead());
             collected = true;
+            AudioManager.S.flowerCollect.Play();
         }
 
-        if (other.tag == "GirlInteractions") {
+        if (other.tag == "GirlInteractions" && !turnedIn) {
             this.transform.SetParent(other.transform);
             StartCoroutine(BounceToGirl());
             turnedIn = false;
+            AudioManager.S.flowerTurnIn.Play();
         }
         
     }

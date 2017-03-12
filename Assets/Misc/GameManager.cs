@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator RunGame() {
+        AudioManager.S.levelStart.Play();
         barText.text = introText;
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
