@@ -431,8 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692730db4b4482142a23a3e303af8975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partingMessage1: 'Howdy '
-  partingMessage2: Bye
+  partingMessage1: '"Maybe we should just be friends" she finally said, rather bluntly.'
+  partingMessage2: But the boy was thick. He still didn't get the message. he would
+    keep chasing the girl of his dreams, even if she was just out of reach.
   waitTime: 5
 --- !u!1001 &1254487351
 Prefab:
@@ -640,6 +641,11 @@ Prefab:
         type: 2}
       propertyPath: finishText
       value: Thanks for playing! -Thomas, Hanna, Christina, Shesanth
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: introText
+      value: Surely, this had to be the point where she would notice him.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
