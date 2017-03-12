@@ -627,11 +627,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 23664961034433572, guid: 981baee23e85a7d428d7a3a20d9ffd7f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8a96e6a97e72f1747b530bd773e58814, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981baee23e85a7d428d7a3a20d9ffd7f, type: 2}
   m_IsPrefabParent: 0
@@ -673,6 +668,16 @@ Prefab:
     - target: {fileID: 4062173997849834, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: introText
+      value: He was <b>friendzoned</b>.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: finishText
+      value: But he didn't know this, and that is why he suffered.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}

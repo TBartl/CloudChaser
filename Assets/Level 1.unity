@@ -786,7 +786,8 @@ Prefab:
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: finishText
-      value: 'The girl '
+      value: This boy was still hung up on his last girlfriend. A boy with nothing
+        to lose and everything to gain.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
