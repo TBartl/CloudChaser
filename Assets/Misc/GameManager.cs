@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour {
         foreach (Image i in intro.playerImages)
             i.enabled = true;
         player.gameObject.SetActive(true);
+        AudioManager.S.grappleReload.Play();
 
         yield return new WaitForSeconds(3f);
         barText.transform.parent.parent.gameObject.SetActive(false);

@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
     bool grounded = true;
     bool wasGrounded = true;
 
+    Vector3 lastVelocity;
+
 	// Use this for initialization
 	void Awake () {
         view = this.GetComponentInChildren<PlayerView>();
@@ -44,8 +46,12 @@ public class PlayerMovement : MonoBehaviour {
 
         wasGrounded = grounded;
         CheckGrounded();
-        if (!wasGrounded && grounded)
+
+        if (lastVelocity.y < -3f && rigid.velocity.y >= -.05f) {
+            AudioManager.S.land.timeSamples = 3000;
             AudioManager.S.land.Play();
+        }
+        lastVelocity = rigid.velocity;
     }
 
     void Update() {
