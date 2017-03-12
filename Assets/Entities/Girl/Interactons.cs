@@ -9,14 +9,17 @@ public class Interactons : MonoBehaviour {
     public Sprite whereFlower;
     public Sprite love;
 
+    [HideInInspector] public bool hasBeenConfusedAboutFlower = false;
+
     bool recievedFlower = false;
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             if (!recievedFlower) {
-                if (words.sprite != whereFlower)
+                if (hasBeenConfusedAboutFlower == false)
                     AudioManager.S.wheresTheFlower.Play();
                 words.sprite = whereFlower;
+                hasBeenConfusedAboutFlower = true;
             }
         }
 
