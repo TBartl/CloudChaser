@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(RunGame());
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+            SceneManager.LoadScene(0);
+
+    }
+
     public void FailLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
