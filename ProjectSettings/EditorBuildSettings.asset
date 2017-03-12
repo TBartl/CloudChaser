@@ -25,3 +25,7 @@ EditorBuildSettings:
     path: Assets/Level 7.unity
   - enabled: 1
     path: Assets/Level 8.unity
+  - enabled: 1
+    path: Assets/Level 9.unity
+  - enabled: 1
+    path: Assets/Level Final.unity
