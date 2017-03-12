@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void WinLevel() {
-        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
+        StartCoroutine(FinishLevel());
     }
 
     IEnumerator RunGame() {
@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator FinishLevel() {
         barText.transform.parent.parent.gameObject.SetActive(true);
+        barText.text = finishText;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }

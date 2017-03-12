@@ -20,6 +20,7 @@ public class Interactons : MonoBehaviour {
         if (other.tag == "Flower") {
             words.sprite = love;
             recievedFlower = true;
+            GameManager.S.WinLevel();
         }
     }
 }

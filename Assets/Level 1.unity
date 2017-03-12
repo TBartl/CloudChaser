@@ -739,8 +739,12 @@ Prefab:
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: introText
-      value: This coming of age story begins like any other; a boy with hopes, dreams,
-        and a grappling hook.
+      value: The boy was desparate, he would do anything for her.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: finishText
+      value: 'The girl '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}

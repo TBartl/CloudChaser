@@ -591,8 +591,9 @@ MonoBehaviour:
     - {fileID: 114006797516073402}
     - {fileID: 114031391891583252}
     - {fileID: 114460997587481422}
-  introText: Ayy lamao
-  finishText: Yolo
+  introText: This coming of age story begins like any other; a boy with hopes, dreams,
+    and a grappling hook.
+  finishText: His heart is set on the girl of his dreams, but his efforts went unnoticed...
   levelEndTime: 5
   remainingTime: 30
 --- !u!222 &222185012661039870
