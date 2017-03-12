@@ -34,6 +34,8 @@ public class Crumble : MonoBehaviour {
         yield return new WaitForSeconds(respawn);
         particleSyst.SetActive(true);
         boxCollider.enabled = true;
+        yield return null;
+        particleSyst.GetComponent<VolumetricCloud>().Initialize();
 
         beingDestroyed = false;
     }
