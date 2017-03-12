@@ -648,7 +648,7 @@ Prefab:
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: finishText
-      value: But he didn't know this, and that is why he suffered.
+      value: But he didn't know this, and that was why he suffered.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}

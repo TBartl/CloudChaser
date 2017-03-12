@@ -641,13 +641,13 @@ Prefab:
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: introText
-      value: The boy was desparate, he would do anything for her.
+      value: "Anyway back to the soap opera\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: finishText
-      value: This boy was still hung up on his last girlfriend. A boy with nothing
-        to lose and everything to gain.
+      value: "The boy\u2019s greatest problem was that he was ugly. Like, really,
+        really ugly."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}

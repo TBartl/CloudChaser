@@ -483,8 +483,8 @@ Prefab:
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}
       propertyPath: finishText
-      value: His heart is set on the girl of his dreams, but his burning passion wasn't
-        reciprocated...
+      value: His heart was set on the girl of his dreams, but his burning passion
+        wasn't reciprocated...
       objectReference: {fileID: 0}
     - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
         type: 2}

@@ -1134,6 +1134,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: introText
+      value: The girl had no interest. At least not in him personally.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931716178067100, guid: b8864e585acf82043ae1380fff1c4fbc,
+        type: 2}
+      propertyPath: finishText
+      value: What she was interested in was only his money.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8864e585acf82043ae1380fff1c4fbc, type: 2}
   m_IsPrefabParent: 0
