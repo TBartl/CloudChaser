@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18caf0f4994f3d341ba7f189e3c7014b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  top: {r: 0.02811716, g: 0.63732255, b: 0.046034984, a: 0.153}
-  bottom: {r: 0.02745098, g: 0.6392157, b: 0.047058824, a: 0}
+  top: {r: 0.8740809, g: 0.87931037, b: 0.5237069, a: 0.522}
+  bottom: {r: 0.654902, g: 0.31764707, b: 0.3372549, a: 0.522}
   scale: 1
 --- !u!114 &114252946855607224
 MonoBehaviour:
@@ -205,7 +205,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1788483758
+  randomSeed: 525877514
   InitialModule:
     serializedVersion: 3
     enabled: 1
