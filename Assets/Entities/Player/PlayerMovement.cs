@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void CheckGrounded() {
         RaycastHit hit;
-        Physics.SphereCast(this.transform.position, .25f, Vector3.down, out hit, .8f, (1 << 8) + (1 << 9));
+        Physics.SphereCast(this.transform.position, .25f, Vector3.down, out hit, .8f, (1 << 8) + (1 << 9)   );
         grounded = (hit.collider != null);
     }
 }
