@@ -36,6 +36,9 @@ public class PlayerGrapple : MonoBehaviour {
     public Color colCantGrapple;
     Image crossHair;
 
+    public Transform hook;
+    Vector3 hookOriginalPos;
+
     // Use this for initialization
     void Start() {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
@@ -44,6 +47,7 @@ public class PlayerGrapple : MonoBehaviour {
         mainCam = Camera.main;
         chargeBar = GameObject.Find("ChargeBar").GetComponent<Image>();
         crossHair = GameObject.Find("CrossHair").GetComponent<Image>();
+        hookOriginalPos = hook.localPosition;
     }
 
     void Update() {
@@ -96,6 +100,7 @@ public class PlayerGrapple : MonoBehaviour {
         while (Input.GetMouseButton(0) && Vector3.Distance(this.transform.position, offsetPoint) > detatchDistance) {
             movement.rigid.velocity = (offsetPoint - transform.position).normalized * speed;
             speed += grappleAcceleration * Time.deltaTime;
+            hook.position = grapplePoint;
             yield return null;
         }
         if (movement.rigid.velocity.y > 0) {
@@ -113,6 +118,7 @@ public class PlayerGrapple : MonoBehaviour {
     void EndGrapple() {
         grappling = false;
         grappleLine.enabled = false;
+        hook.localPosition = hookOriginalPos;
         AudioManager.S.grappleDisconnect.Play();
     }
 
@@ -125,8 +131,7 @@ public class PlayerGrapple : MonoBehaviour {
         }
         chargeBar.transform.localScale = Vector3.one;
         chargeBar.color = Color.white;
-        AudioManager.S.grappleReload.Play();
-        reloaded = true;
+        AudioManager.S.grappleReload.Play();        reloaded = true;
     }
 
 
