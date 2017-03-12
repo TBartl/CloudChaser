@@ -13,6 +13,7 @@ public class Collect : MonoBehaviour {
             this.transform.SetParent(other.transform);
             StartCoroutine(BounceToHead());
             collected = true;
+            GameObject.FindGameObjectWithTag("Girl").GetComponentInChildren<Interactons>().hasBeenConfusedAboutFlower = true;
             AudioManager.S.flowerCollect.Play();
         }
 
