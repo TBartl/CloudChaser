@@ -39,6 +39,9 @@ public class PlayerGrapple : MonoBehaviour {
     public Transform hook;
     Vector3 hookOriginalPos;
 
+    [HideInInspector]
+    public bool overrideNoGrapple = false;
+
     // Use this for initialization
     void Start() {
         movement = transform.parent.GetComponentInChildren<PlayerMovement>();
@@ -55,7 +58,7 @@ public class PlayerGrapple : MonoBehaviour {
             Vector3.Dot(transform.forward, (grapplePoint - this.transform.position).normalized) > .8f &&
             Vector3.Distance(this.transform.position, grapplePoint) > (detatchDistance + .5f) &&
             Vector3.Distance(this.transform.position, grapplePoint) <= (maxDist + 2f) &&
-            grapplePoint != Vector3.zero
+            grapplePoint != Vector3.zero && !overrideNoGrapple
             ) {
             StartCoroutine(Grapple());
         }

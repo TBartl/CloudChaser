@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator RunGame() {
         AudioManager.S.levelStart.Play();
-        barText.text = introText;
+        EnableText(introText);
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -81,10 +81,13 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator FinishLevel() {
-        barText.transform.parent.parent.gameObject.SetActive(true);
-        barText.text = finishText;
+        EnableText(finishText);
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
+    public void EnableText(string text) {
+        barText.transform.parent.parent.gameObject.SetActive(true);
+        barText.text = text;
+    }
 }
