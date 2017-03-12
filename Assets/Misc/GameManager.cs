@@ -23,13 +23,17 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager S;
     public IntroSequenceSettings intro;
-    
+    public string introText;
+    public string finishText;
 
+    Text barText;
+    public float levelEndTime = 5f;
 
     public float remainingTime = 30f;
 
     void Start() {
         S = this;
+        barText = GameObject.Find("BarText").GetComponent<Text>() ;
         StartCoroutine(RunGame());
     }
 
@@ -37,7 +41,12 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void WinLevel() {
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
+    }
+
     IEnumerator RunGame() {
+        barText.text = introText;
         Transform flower = GameObject.FindGameObjectWithTag("Flower").transform;
         Transform girl = GameObject.FindGameObjectWithTag("Girl").transform;
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -60,9 +69,19 @@ public class GameManager : MonoBehaviour {
             Camera.main.transform.rotation = Quaternion.Slerp(Quaternion.Euler(intro.girlRotation), Quaternion.Euler(Vector3.zero), p);
             yield return null;
         }
+        
         foreach (Image i in intro.playerImages)
             i.enabled = true;
         player.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        barText.transform.parent.parent.gameObject.SetActive(false);
+    }
+
+    IEnumerator FinishLevel() {
+        barText.transform.parent.parent.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
 }
