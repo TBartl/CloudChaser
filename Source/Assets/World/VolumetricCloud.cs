@@ -15,7 +15,7 @@ public class VolumetricCloud : MonoBehaviour {
         partSystem = this.GetComponent<ParticleSystem>();
 
         ParticleSystem.ShapeModule shapeModule = partSystem.shape;
-        shapeModule.box = transform.parent.localScale;
+        shapeModule.scale = transform.parent.localScale;
         ParticleSystem.Burst burst = new ParticleSystem.Burst();
         short thisBurstCount = (short)(burstCount * (transform.parent.localScale.x / scale * transform.parent.localScale.y / scale * transform.parent.localScale.z / scale));
         burst.minCount = thisBurstCount;
@@ -34,7 +34,7 @@ public class VolumetricCloud : MonoBehaviour {
         particles = new ParticleSystem.Particle[partSystem.particleCount];
         int numParticles = partSystem.GetParticles(particles);
         for (int i = 0; i < numParticles; i++) {
-            particles[i].startColor = Color.Lerp(bottom, top, (particles[i].position.y / partSystem.shape.box.y) + .5f);
+            particles[i].startColor = Color.Lerp(bottom, top, (particles[i].position.y / partSystem.shape.scale.y) + .5f);
         }
 
         initialized = true;
